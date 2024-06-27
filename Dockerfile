@@ -26,6 +26,8 @@ ENV APP_INSTALL=${APP_INSTALL}
 ENV LIBNVIDIA_VERSION=${LIBNVIDIA_VERSION}
 RUN echo "keyboard-configuration keyboard-configuration/layoutcode select us" | debconf-set-selections && \
 	echo "keyboard-configuration keyboard-configuration/xkb-keymap select us" | debconf-set-selections && \
+	echo "tzdata tzdata/Areas select Etc" | debconf-set-selections && \
+	echo "tzdata tzdata/Zones/Etc select UTC" | debconf-set-selections && \
 	apt install -y  \
 		breeze-icon-theme \
 		brotli \
