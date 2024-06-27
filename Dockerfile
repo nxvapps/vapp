@@ -97,8 +97,8 @@ ARG APP
 ARG APP_START
 ENV APP=${APP}
 ENV APP_START=${APP_START}
-RUN sed -i -e "s/{{APP}}/${APP}/g" files/root-files/root/run.sh && \
-	sed -i -e "s/{{APP_START}}/${APP_START}/g" files/root-files/root/.xinitrc
+RUN sed -i -e "s/{{APP}}/${APP}/g" /root/run.sh && \
+	sed -i -e "s/{{APP_START}}/${APP_START}/g" /root/.xinitrc
 
 # Permissions
 RUN chmod +x /root/run.sh && \
