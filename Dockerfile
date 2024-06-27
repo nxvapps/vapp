@@ -7,11 +7,17 @@ FROM ${BASE_IMAGE} AS base
 RUN apt update && \
 	apt install -y curl software-properties-common
 
+# Copy app pre-setup
+COPY files/app_presetup.sh /root
+
+# Run app pre-setup
+RUN bash /root/app_presetup.sh
+
 # Install repos
 RUN curl -fsSL https://xpra.org/xpra.asc > /usr/share/keyrings/xpra.asc && \
     echo 'deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/xpra.asc] https://xpra.org jammy main' > /etc/apt/sources.list.d/xpra.list
-RUN add-apt-repository -y ppa:obsproject/obs-studio && \
-    apt update
+
+RUN apt update
 
 # Install packages
 ARG APP_INSTALL
