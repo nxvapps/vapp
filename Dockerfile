@@ -24,10 +24,13 @@ ARG APP_INSTALL
 ARG LIBNVIDIA_VERSION
 ENV APP_INSTALL=${APP_INSTALL}
 ENV LIBNVIDIA_VERSION=${LIBNVIDIA_VERSION}
+ENV DEBIAN_FRONTEND=noninteractive
 RUN echo "keyboard-configuration keyboard-configuration/layoutcode select us" | debconf-set-selections && \
 	echo "keyboard-configuration keyboard-configuration/xkb-keymap select us" | debconf-set-selections && \
 	echo "tzdata tzdata/Areas select Etc" | debconf-set-selections && \
 	echo "tzdata tzdata/Zones/Etc select UTC" | debconf-set-selections && \
+	ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
+	dpkg-reconfigure -f noninteractive tzdata && \
 	apt install -y  \
 		breeze-icon-theme \
 		brotli \
