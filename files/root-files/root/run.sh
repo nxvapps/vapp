@@ -4,10 +4,14 @@ set -eou pipefail
 
 # Set password from global, default to none
 export APP_PASSWORD="${APP_PASSWORD:-}"
+export PORT="${PORT:-7777}"
 
 if [ -z "${APP_PASSWORD}" ]; then
     echo "APP_PASSWORD variable is not set, this is insecure! Was this intentional?" | tee /var/log/{{APP}}.log
 fi
+
+echo "Setting port for XPRA to: ${PORT}" | tee /var/log/{{APP}}.log
+sed -i -e "s/{{PORT}}/${PORT}/g" /root/xpra-session.sh
 
 if [ -f /root/app_run.sh ]; then
     /root/app_run.sh | tee tee /var/log/{{APP}}.log

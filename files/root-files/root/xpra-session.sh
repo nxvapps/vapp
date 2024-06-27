@@ -12,7 +12,7 @@ trap cleanup SIGINT
 echo "Starting X11 session!"
 while true
 do
-    /usr/bin/xpra start --use-display :100 --username=ncast --password-file=/root/.xprapasswd --no-daemon --bind-tcp=0.0.0.0:7777
+    /usr/bin/xpra start --use-display :100 --username=ncast --password-file=/root/.xprapasswd --no-daemon --bind-tcp=0.0.0.0:{{PORT}}
     sleep 5
     echo "Restarting X11 session!"
 done
