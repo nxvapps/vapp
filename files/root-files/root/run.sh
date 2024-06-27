@@ -19,7 +19,7 @@ fi
 
 # This is app startup routines
 echo "Running app startup routines"
-bash app_startup.sh | tee /var/log/{{APP}}.log
+bash /root/app_startup.sh | tee /var/log/{{APP}}.log
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 
