@@ -101,7 +101,6 @@ RUN sed -i -e "s/{{APP}}/${APP}/g" /root/run.sh && \
 	sed -i -e "s/{{APP_START}}/${APP_START}/g" /root/.xinitrc
 
 # Permissions
-RUN chmod +x /root/run.sh && \
-	chmod +x /root/app_install.sh
+RUN chmod +x /root/run.sh
 
 ENTRYPOINT ["sh", "-c", "/root/run.sh"]
