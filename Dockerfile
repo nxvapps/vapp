@@ -21,7 +21,9 @@ RUN apt update
 
 # Install packages
 ARG APP_INSTALL
+ARG LIBNVIDIA_VERSION
 ENV APP_INSTALL=${APP_INSTALL}
+ENV LIBNVIDIA_VERSION=${LIBNVIDIA_VERSION}
 RUN echo "keyboard-configuration keyboard-configuration/layoutcode select us" | debconf-set-selections && \
 	echo "keyboard-configuration keyboard-configuration/xkb-keymap select us" | debconf-set-selections && \
 	apt install -y  \
@@ -30,6 +32,7 @@ RUN echo "keyboard-configuration keyboard-configuration/layoutcode select us" | 
 		dbus-x11 \
 		dolphin \
 		fail2ban \
+		libnvidia-encode-${LIBNVIDIA_VERSION} \
 		pulseaudio \
 		python3-xdg \
 		qt5ct \
