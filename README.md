@@ -31,3 +31,13 @@ the app at runtime.
 ### root-files
 This folder, located at `files/root-files`, if specified in your project will override any file in the files/root-files of this project.
 The intention is that you can override any file if unique issues present themselves.
+
+### Credits
+For now we support open source contributors and use only projects with open licenses. If you are going to
+support this project, considering throwing one of the listed people a hand as well!
+
+#### Art
+Hey artists! Want to engage but not technical? Heres a chance! We could use custom art work.
+
+* \[Background.png\] darkdissolution - https://www.deviantart.com/darkdissolution/art/Abstract-Wallpaper-Free-to-Use-96-938676956
+
