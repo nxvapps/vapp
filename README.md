@@ -9,6 +9,10 @@ There are a few critical components
 ### X11 Session
 This is what powers everything. We run the app directly in an X11 session with no desktop.
 
+### v4l2loopback
+This needs to be enabled and loaded on the host in order to function. Please use the v4l2loopback_install.sh
+script to set this up.
+
 ### VirtualGL
 This is what allows us to GPU accelerate raw X11 sessions and is critical to this project.
 
