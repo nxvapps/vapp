@@ -1,6 +1,6 @@
 ARG CUDA_VERSION
 ARG UBUNTU_VERSION
-ARG BASE_IMAGE=nvidia/cuda:${CUDA_VERSION}-devel-ubuntu${UBUNTU_VERSION}
+ARG BASE_IMAGE=nvidia/cuda:${CUDA_VERSION}-runtime-ubuntu${UBUNTU_VERSION}
 FROM ${BASE_IMAGE} AS base
 
 # Install requirements
