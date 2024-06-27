@@ -15,6 +15,7 @@ sed -i -e "s/{{PORT}}/${PORT}/g" /root/xpra-session.sh
 
 if [ -f /root/app_run.sh ]; then
     /root/app_run.sh | tee tee /var/log/{{APP}}.log
+fi
 
 # This is app startup routines
 echo "Running app startup routines"
