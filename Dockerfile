@@ -30,7 +30,6 @@ RUN echo "keyboard-configuration keyboard-configuration/layoutcode select us" | 
 	echo "tzdata tzdata/Areas select Etc" | debconf-set-selections && \
 	echo "tzdata tzdata/Zones/Etc select UTC" | debconf-set-selections && \
 	ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
-	dpkg-reconfigure -f noninteractive tzdata && \
 	apt install -y  \
 		breeze-icon-theme \
 		brotli \
