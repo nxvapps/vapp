@@ -90,7 +90,7 @@ RUN cp -rf /root/root-files/* / && \
 	rm -rf /root/root-files
 
 # App specific install procesdures
-RUN /root/app_install.sh
+RUN bash /root/app_install.sh
 
 # Set the app
 ARG APP
